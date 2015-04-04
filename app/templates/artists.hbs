@@ -1,0 +1,14 @@
+<h2>Artists</h2><button {{action 'openModal' 'artists/create' 'artists/create' 'artist'}}>Create Artist</button>
+
+{{#if model.length}}
+  <ul>
+    {{#each artist in model}}
+      <li>{{artist.name}}
+        <button {{action 'openModal' 'artists/edit' 'artists/edit' artist}}>Edit</button>
+        <button {{action 'openModal' 'artists/delete' 'artists/delete' artist}}>Delete</button>
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p>No artists were found.</p>
+{{/if}}
