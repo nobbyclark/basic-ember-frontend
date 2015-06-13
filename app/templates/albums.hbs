@@ -1,0 +1,14 @@
+<h2>Albums</h2><button {{action 'openModal' 'albums/create' 'albums/create' 'album'}}>Create Album</button>
+
+{{#if model.length}}
+  <ul>
+    {{#each album in model}}
+      <li>{{link-to album.name 'album' album}}
+        <button {{action 'openModal' 'albums/create' 'albums/create' album}}>Edit</button>
+        <button {{action 'openModal' 'albums/delete' 'albums/delete' album}}>Delete</button>
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p>No albums were found.</p>
+{{/if}}
